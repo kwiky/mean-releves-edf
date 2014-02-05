@@ -1,0 +1,19 @@
+{
+  "name": "releve-edf",
+  "version": "0.1.0",
+  "author": "Steve Grosbois <steve.grosbois@gmail.com>",
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "node node_modules/bower/bin/bower install"
+  },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "mongoose": "*",
+    "stylus": "*",
+    "nib": "*",
+    "view-helpers": "*",
+    "lodash": "*",
+    "bower": "*"
+  }
+}
