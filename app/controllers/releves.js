@@ -8,6 +8,18 @@ var mongoose = require('mongoose'),
     _ = require('lodash');
 
 /**
+ * Find releve by id
+ */
+exports.releve = function(req, res, next, id) {
+    Releve.load(id, function(err, releve) {
+        if (err) return next(err);
+        if (!releve) return next(new Error('Failed to load releve ' + id));
+        req.releve = releve;
+        next();
+    });
+};
+
+/**
  * Index
  */
 exports.index = function(req, res) {
@@ -49,6 +61,22 @@ exports.all = function(req, res) {
             });
         } else {
             res.jsonp(releves);
+        }
+    });
+};
+
+/**
+ * Delete a releve
+ */
+exports.destroy = function(req, res) {
+    var releve = req.releve;
+    releve.remove(function(err) {
+        if (err) {
+            res.render('error', {
+                status: 500
+            });
+        } else {
+            res.jsonp(releve);
         }
     });
 };

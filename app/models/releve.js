@@ -23,4 +23,13 @@ var ReleveSchema = new Schema({
     }
 });
 
+/**
+ * Statics
+ */
+ReleveSchema.statics.load = function(id, cb) {
+    this.findOne({
+        _id: id
+    }).exec(cb);
+};
+
 mongoose.model('Releve', ReleveSchema);

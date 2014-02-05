@@ -22,4 +22,20 @@ angular.module('edf.releves').controller('RelevesController', ['$scope', '$route
             $scope.releves = releves;
         });
     };
+
+    $scope.remove = function(releve) {
+        if (releve) {
+            releve.$remove();
+
+            for (var i in $scope.releves) {
+                if ($scope.releves[i] === releve) {
+                    $scope.releves.splice(i, 1);
+                }
+            }
+        }
+        else {
+            $scope.releve.$remove();
+            $location.path('releves');
+        }
+    };
 }]);
