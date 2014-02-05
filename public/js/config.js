@@ -7,6 +7,9 @@ angular.module('edf').config(['$routeProvider',
         when('/', {
             templateUrl: 'views/releves/index.html'
         }).
+        when('/releves', {
+            templateUrl: 'views/releves/list.html'
+        }).
         otherwise({
             redirectTo: '/'
         });

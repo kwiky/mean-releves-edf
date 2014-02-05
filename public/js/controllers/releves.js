@@ -16,4 +16,10 @@ angular.module('edf.releves').controller('RelevesController', ['$scope', '$route
         this.hc = '';
         this.hp = '';
     };
+
+    $scope.find = function() {
+        Releves.query(function(releves) {
+            $scope.releves = releves;
+        });
+    };
 }]);

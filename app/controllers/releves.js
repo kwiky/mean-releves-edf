@@ -37,3 +37,18 @@ exports.create = function(req, res, next) {
 exports.show = function(req, res) {
     res.jsonp(req.releve);
 };
+
+/**
+ * List of releves
+ */
+exports.all = function(req, res) {
+    Releve.find().sort('-created').exec(function(err, releves) {
+        if (err) {
+            res.render('error', {
+                status: 500
+            });
+        } else {
+            res.jsonp(releves);
+        }
+    });
+};
