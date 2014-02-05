@@ -2,6 +2,12 @@
 
 Application pour effectuer et suivre ses relevés EDF
 
+Cette application utilise les technologies suivantes (MEAN) :
+* MongoDB
+* Express (+stylus + jade)
+* Angularjs
+* Node.js
+
 ## Prerequis
 
 ### Applications
