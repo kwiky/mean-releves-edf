@@ -1,4 +1,6 @@
 orange = #fe5815
+noir = #000
+blanc = #fff
 
 h1
 	font-size: 20px;
@@ -6,15 +8,24 @@ h1
 	margin-bottom: 5px;
 
 .navbar
-	.nav>li>a.brand
-		padding-left:20px;
-		margin-left:0;
-	.nav>li>a
-		color:#fff;
-
-.navbar-inverse
 	background-color: orange
 	border-color: orange;
+
+.navbar a
+	color:blanc;
+
+.nav>li>a
+	&:hover
+		background-color: noir
+
+.navbar-brand
+	color: blanc
+
+.icon-bar
+	background-color: blanc
+
+.navbar-toggle
+	border-color: blanc
 
 .content 
 	margin-top:70px;

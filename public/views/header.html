@@ -1,10 +1,18 @@
-<div class="" data-ng-controller="HeaderController">
-    <ul class="navbar-nav nav">
-        <li>
-            <a class="navbar-brand" href="/">Relevé EDF</a>
-        </li>
-        <li data-ng-repeat="item in menu" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
-            <a href="#!/{{item.link}}">{{item.title}}</a>
-        </li>
-    </ul>
-</div>
+<header class="navbar navbar-fixed-top" role="banner" data-ng-controller="HeaderController">
+	<div class="navbar-header">
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bf-navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/">Relevé EDF</a>
+	</div>
+	<nav class="collapse navbar-collapse bf-navbar-collapse" role="navigation">
+	    <ul class="navbar-nav nav">
+	        <li data-ng-repeat="item in menu" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
+	            <a href="#!/{{item.link}}">{{item.title}}</a>
+	        </li>
+	    </ul>
+	</nav>
+</header>
