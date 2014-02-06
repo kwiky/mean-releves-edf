@@ -9,5 +9,8 @@ angular.module('edf.system').controller('HeaderController', ['$scope', 'Global',
     },{
         'title': 'Relevés',
         'link': 'releves'
+    },{
+        'title': 'Graphique',
+        'link': 'releves/chart'
     }];
 }]);

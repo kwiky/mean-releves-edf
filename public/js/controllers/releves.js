@@ -23,6 +23,15 @@ angular.module('edf.releves').controller('RelevesController', ['$scope', '$route
         });
     };
 
+    $scope.chart = function() {
+        Releves.query(function(releves) {
+            $scope.xkey = 'created';      
+            $scope.ykeys = ['hc', 'hp'];
+            $scope.labels = ['heure creuse', 'heure pleine'];
+            $scope.releves = releves;
+        });
+    }
+
     $scope.remove = function(releve) {
         if (releve) {
             releve.$remove();
