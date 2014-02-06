@@ -6,7 +6,7 @@ var MINUTE = SECOND * 60;
 var HOUR = MINUTE * 60;
 var DAY = HOUR * 24;
 
-var TIMEREFERENCE = SECOND;
+var TIMEREFERENCE = HOUR;
 
 angular.module('edf.releves').controller('RelevesController', ['$scope', '$routeParams', '$location', 'Global', 'Releves', 
     function ($scope, $routeParams, $location, Global, Releves) {

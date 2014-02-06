@@ -1,5 +1,5 @@
 <section data-ng-controller="RelevesController" data-ng-init="find()">
-	<h1>Liste des relevés</h1>
+	<h1><i class="fa fa-th-list"></i> Liste des relevés</h1>
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
@@ -14,7 +14,7 @@
 				<td>{{releve.hc}}</td>
 				<td>{{releve.hp}}</td>
 				<td>{{releve.created | date:'dd/MM/yyyy à HH:mm:ss'}}</td>
-				<td><button type="button" class="btn" data-ng-click="remove(releve);">Supprimer</button></td>
+				<td><button type="button" class="btn" data-ng-click="remove(releve);"><i class="fa fa-trash-o"></i> Supprimer</button></td>
 			</tr>
 		</tbody>
 	</table>

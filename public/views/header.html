@@ -11,7 +11,7 @@
 	<nav class="collapse navbar-collapse bf-navbar-collapse" role="navigation">
 	    <ul class="navbar-nav nav">
 	        <li data-ng-repeat="item in menu" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
-	            <a href="#!/{{item.link}}">{{item.title}}</a>
+	            <a href="#!/{{item.link}}" ng-bind-html="item.title"></a>
 	        </li>
 	    </ul>
 	</nav>

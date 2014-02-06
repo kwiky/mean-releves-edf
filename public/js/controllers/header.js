@@ -4,13 +4,13 @@ angular.module('edf.system').controller('HeaderController', ['$scope', 'Global',
     $scope.global = Global;
 
     $scope.menu = [{
-        'title': 'Ajouter un relevé',
+        'title': '<i class="fa fa-plus"></i> Ajouter un relevé',
         'link': ''
     },{
-        'title': 'Relevés',
+        'title': '<i class="fa fa-th-list"></i> Relevés',
         'link': 'releves'
     },{
-        'title': 'Graphique',
+        'title': '<i class="fa fa-signal"></i> Graphique',
         'link': 'releves/chart'
     }];
 }]);
