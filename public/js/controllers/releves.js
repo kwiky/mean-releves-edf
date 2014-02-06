@@ -47,7 +47,6 @@ angular.module('edf.releves').controller('RelevesController', ['$scope', '$route
                     relevePrev = releve;
                 }
             }
-            console.log(releveCum);
 
             $scope.xkey = 'created';      
             $scope.ykeys = ['hcMoy', 'hpMoy'];
