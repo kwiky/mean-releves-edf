@@ -1,5 +1,13 @@
 'use strict';
 
+var MILLISECOND = 1;
+var SECOND = MILLISECOND * 1000;
+var MINUTE = SECOND * 60;
+var HOUR = MINUTE * 60;
+var DAY = HOUR * 24;
+
+var TIMEREFERENCE = SECOND;
+
 angular.module('edf.releves').controller('RelevesController', ['$scope', '$routeParams', '$location', 'Global', 'Releves', 
     function ($scope, $routeParams, $location, Global, Releves) {
     $scope.global = Global;
@@ -25,10 +33,26 @@ angular.module('edf.releves').controller('RelevesController', ['$scope', '$route
 
     $scope.chart = function() {
         Releves.query(function(releves) {
+            var relevePrev = releves[0];
+            relevePrev.t = (new Date(relevePrev.created)).getTime();
+            var releveCum = []
+            for (var i = 0; i < releves.length; i++) {
+                if (i > 0) {
+                    var releve = releves[i];
+                    releve.t = (new Date(releve.created)).getTime();
+                    releve.timeElasped = releve.t - relevePrev.t;
+                    releve.hcMoy = TIMEREFERENCE * (releve.hc - relevePrev.hc) / releve.timeElasped;
+                    releve.hpMoy = TIMEREFERENCE * (releve.hp - relevePrev.hp) / releve.timeElasped;
+                    releveCum[i-1] = releve;
+                    relevePrev = releve;
+                }
+            }
+            console.log(releveCum);
+
             $scope.xkey = 'created';      
-            $scope.ykeys = ['hc', 'hp'];
+            $scope.ykeys = ['hcMoy', 'hpMoy'];
             $scope.labels = ['heure creuse', 'heure pleine'];
-            $scope.releves = releves;
+            $scope.data = releveCum;
         });
     }
 

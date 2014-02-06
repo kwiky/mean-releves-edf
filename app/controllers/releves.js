@@ -54,7 +54,7 @@ exports.show = function(req, res) {
  * List of releves
  */
 exports.all = function(req, res) {
-    Releve.find().sort('-created').exec(function(err, releves) {
+    Releve.find().sort('created').exec(function(err, releves) {
         if (err) {
             res.render('error', {
                 status: 500
